@@ -14,7 +14,7 @@ public abstract class City {
 
     public abstract String getURL();
 
-    protected String specialCase(String cityName){
+    protected String specialName(String cityName){
         return cityName.toLowerCase()
                 .replace(" ", "_")
                 .replace("ä","ae")
