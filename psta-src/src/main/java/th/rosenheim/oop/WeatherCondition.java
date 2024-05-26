@@ -10,7 +10,8 @@ public enum WeatherCondition {
         this.number = number;
     }
 
-    public String getWeatherConditionString() {
+
+    public static String getWeatherConditionString(int number) {
         switch (number) {
             case 0: return "sunny";
             case 1: return "cloudy";
