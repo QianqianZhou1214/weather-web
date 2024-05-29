@@ -25,8 +25,8 @@ public class BigCity extends City {
     @Override
     public String getContent() {
         String districtNames = String.join(", ", districts);
-        return "<h2>Weather for " + specialName(cityName) + ",/h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>" +
-                 "<p>This also applied to: " + districtNames + ".</p>";
+        return "<h2>Weather for " + specialName(this.cityName) + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>" +
+                 "<p>This also applied to: " + specialName(districtNames) + ".</p>";
     }
 
     /**

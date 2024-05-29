@@ -34,7 +34,7 @@ public abstract class City {
      * @return names after replacing special characters
      */
     protected String specialName(String cityName){
-        return cityName.toLowerCase()
+        return cityName
                 .replace(" ", "_")
                 .replace("ä","ae")
                 .replace("ö", "oe")

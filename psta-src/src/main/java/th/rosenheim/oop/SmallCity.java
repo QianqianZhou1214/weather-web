@@ -20,7 +20,7 @@ public class SmallCity extends City {
     @Override
     public String getContent() {
 
-        return "<h2>Weather for " + specialName(cityName) + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>";
+        return "<h2>Weather for " + specialName(this.cityName) + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(this.cityName) + ".</p>";
 
     }
 
