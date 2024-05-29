@@ -2,19 +2,32 @@ package th.rosenheim.oop;
 
 public class SmallCity extends City {
 
+    /**
+     * Constructs a small city with name and weather condition
+     * @param cityName
+     * @param weatherCondition
+     */
     public SmallCity(String cityName, int weatherCondition) {
 
         super(cityName, weatherCondition);
 
     }
 
+    /**
+     * Implement the abstract getContent method from super class City
+     * @return return the page contents for small city
+     */
     @Override
     public String getContent() {
 
-        return "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>";
+        return "<h2>Weather for " + specialName(cityName) + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>";
 
     }
 
+    /**
+     * Implement the abstract getURL method from super class
+     * @return return the URL of small city
+     */
     @Override
     public String getURL() {
 
