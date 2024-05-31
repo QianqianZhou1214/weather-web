@@ -10,6 +10,10 @@ public enum WeatherCondition {
         this.number = number;
     }
 
+    public int getNumber() {
+        return this.number;
+    }
+
     /**
      * Return names in string of the weather conditions by given integer numbers
      * @param number the integer value corresponding to weather conditions
