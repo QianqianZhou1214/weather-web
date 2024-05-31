@@ -24,9 +24,15 @@ public class BigCity extends City {
      */
     @Override
     public String getContent() {
-        String districtNames = String.join(", ", districts);
-        return "<h2>Weather for " + specialName(this.cityName) + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + specialName(cityName) + ".</p>" +
-                 "<p>This also applied to: " + specialName(districtNames) + ".</p>";
+        StringBuilder districtNames = new StringBuilder();
+        for (int i = 0; i < districts.size(); i++) {
+            districtNames.append(districts.get(i));
+            if(i < districts.size() - 1){
+                districtNames.append(", ");
+            }
+        }
+        return "<h2>Weather for " + this.cityName + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + this.cityName + ".</p>" +
+                 "<p>This also applied to: " + districtNames + ".</p>";
     }
 
     /**
@@ -35,6 +41,6 @@ public class BigCity extends City {
      */
     @Override
     public String getURL() {
-        return "weather_small_city_" + specialName(cityName) + ".html";
+        return "weather_big_city_" + specialName(cityName) + ".html";
     }
 }
