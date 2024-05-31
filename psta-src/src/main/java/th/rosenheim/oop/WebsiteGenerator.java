@@ -44,31 +44,37 @@ public class WebsiteGenerator {
     }
 
     /**
-     * Generates webpages with navigation and contents
-     * @param navigation Navigation Bar
-     * @param content    The contents of webpages
-     * @return return the page with all contents
+     * Generates webpages structure with navigation and contents
+     * @param navigation In each page we need a Navigation Bar
+     * @param content    We need the weather contents for each page
+     * @return return the page with whole contents (navigation and contents)
      */
 
-    public String getPage(String navigation, String content){
+    public String generatePage(String navigation, String content){
         return "<html>\n<body>" + navigation + "\n" + content + "\n<body>\n<html>";
     }
 
+    /**
+     * Create html files and write corresponding contents (getNavigation and contents) into files
+     * @param websiteName the file path (names + type e.g. index.html)
+     * @throws IOException check for if an I/O error occurs
+     */
+
     public void generateWebsites(String websiteName) throws IOException {
-        Path path = Path.of(websiteName);
+        Path path = Path.of(websiteName); //firstly created an index of the webapp where we can see only cities name
         if(Files.exists(path)){
             Files.delete(path);
-        }
+        }//if the file exists, we delete it in case we always have the most up-to-date files.
         Files.createFile(path);
-        Files.write(path, getPage(getNavigation(),"").getBytes());
+        Files.write(path, generatePage(getNavigation(),"").getBytes());
 
         for (City city : cities) {
-            String cityWeb = getPage(getNavigation(), city.getContent());
+            String cityWeb = generatePage(getNavigation(), city.getContent());
             if(Files.exists(Paths.get(city.getURL()))){
                 Files.delete(Paths.get(city.getURL()));
             }
             Files.write(Paths.get(city.getURL()), cityWeb.getBytes());
-        }
+        }//for each city we created different html files with specific contents
 
 
     }
