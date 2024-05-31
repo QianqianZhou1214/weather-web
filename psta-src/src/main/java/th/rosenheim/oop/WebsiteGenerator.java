@@ -34,11 +34,11 @@ public class WebsiteGenerator {
     public String getNavigation(){
         StringBuilder navigation = new StringBuilder();
         navigation.append("<h1>The Weather App</h1><p>");
-        navigation.append("\n");
         for (City city : cities) {
-            navigation.append("<p><a href=").append(city.getURL()).append(">").append(city.cityName).append("</a>");
+            navigation.append("<a href=").append(city.getURL()).append(">").append(city.cityName).append("</a>");
             navigation.append(" | ");
         }
+        navigation.setLength(navigation.length() - cities.size());
         navigation.append("</p>");
         return navigation.toString();
     }
@@ -56,14 +56,19 @@ public class WebsiteGenerator {
 
     public void generateWebsites(String websiteName) throws IOException {
         Path path = Path.of(websiteName);
+        if(Files.exists(path)){
+            Files.delete(path);
+        }
         Files.createFile(path);
         Files.write(path, getPage(getNavigation(),"").getBytes());
 
         for (City city : cities) {
             String cityWeb = getPage(getNavigation(), city.getContent());
+            if(Files.exists(Paths.get(city.getURL()))){
+                Files.delete(Paths.get(city.getURL()));
+            }
             Files.write(Paths.get(city.getURL()), cityWeb.getBytes());
         }
-
 
 
     }
