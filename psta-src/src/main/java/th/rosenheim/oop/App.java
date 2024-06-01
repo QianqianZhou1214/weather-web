@@ -17,10 +17,10 @@ public class App {
 
     public static void init() {
         WebsiteGenerator website = new WebsiteGenerator();
-        website.addCities(new SmallCity("Rosenheim", WeatherCondition.CLOUDY.getNumber()));
-        website.addCities(new BigCity("München", WeatherCondition.RAINY.getNumber(),
+        website.addCities(new SmallCity("Rosenheim", WeatherCondition.CLOUDY.ordinal()));
+        website.addCities(new BigCity("München", WeatherCondition.RAINY.ordinal(),
                 new ArrayList<>(List.of("Schwabing", "Sendling", "Lehel", "Nymphenburg"))));
-        website.addCities(new BigCity("Berlin", WeatherCondition.SUNNY.getNumber(),
+        website.addCities(new BigCity("Berlin", WeatherCondition.SUNNY.ordinal(),
                 new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg"))));
 
         try{
