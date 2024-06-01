@@ -13,7 +13,7 @@ class BigCityTest {
 
     @BeforeAll
     public static void setUpClass() {
-        berlin = new BigCity("Berlin", WeatherCondition.SUNNY.getNumber(),
+        berlin = new BigCity("Berlin", WeatherCondition.SUNNY.ordinal(),
                 new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg")));
 
     }

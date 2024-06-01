@@ -31,7 +31,8 @@ public class BigCity extends City {
                 districtNames.append(", ");
             }
         }
-        return "<h2>Weather for " + this.cityName + "</h2>" + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + this.cityName + ".</p>" +
+        return "<h2>Weather for " + this.cityName + "</h2>"
+                + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + this.cityName + ".</p>" +
                  "<p>This also applied to: " + districtNames + ".</p>";
     }
 
