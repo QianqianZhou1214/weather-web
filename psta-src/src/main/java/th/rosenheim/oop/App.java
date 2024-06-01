@@ -1,6 +1,10 @@
 package th.rosenheim.oop;
 
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
 
@@ -12,6 +16,17 @@ public class App {
 
 
     public static void init() {
-        System.out.println("Hello World!");
+        WebsiteGenerator website = new WebsiteGenerator();
+        website.addCities(new SmallCity("Rosenheim", WeatherCondition.CLOUDY.getNumber()));
+        website.addCities(new BigCity("München", WeatherCondition.RAINY.getNumber(),
+                new ArrayList<>(List.of("Schwabing", "Sendling", "Lehel", "Nymphenburg"))));
+        website.addCities(new BigCity("Berlin", WeatherCondition.SUNNY.getNumber(),
+                new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg"))));
+
+        try{
+            website.generateWebsites("The Weather App.html");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
