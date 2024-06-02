@@ -1,6 +1,8 @@
 package th.rosenheim.oop;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,10 +13,14 @@ class BigCityTest {
 
     private static BigCity berlin;
 
-    @BeforeAll
-    public static void setUpClass() {
+    @BeforeEach
+    public void setUpClass() {
         berlin = new BigCity("Berlin", WeatherCondition.SUNNY.ordinal(),
-                new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg")));
+                new ArrayList<>(new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg"))));
+
+    }
+    @AfterEach
+    public void tearDown() {
 
     }
 
