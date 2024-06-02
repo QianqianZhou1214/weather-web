@@ -65,10 +65,12 @@ public class WebsiteGenerator {
      */
 
     public void generateWebsites(String websiteName) throws IOException {
-        Path path = Path.of(websiteName); //firstly created an index of the webapp where we can see only cities name
+        String folderPath = "websites"; //create a folder for html files
+        Files.createDirectories(Paths.get(folderPath));
+        Path path = Paths.get(folderPath,websiteName);//set an index file path
         if(Files.exists(path)){
             Files.delete(path);
-        }//if the file exists, we delete it in case we always have the most up-to-date files.
+        }//if the file already exists, we delete it so that we always have the most up-to-date files.
         Files.createFile(path);
         Files.write(path, generatePage(getNavigation(),"").getBytes());
 
@@ -77,7 +79,7 @@ public class WebsiteGenerator {
             if(Files.exists(Paths.get(city.getURL()))){
                 Files.delete(Paths.get(city.getURL()));
             }
-            Files.write(Paths.get(city.getURL()), cityWeb.getBytes());
+            Files.write(Paths.get(folderPath, city.getURL()), cityWeb.getBytes());
         }//for each city we created different html files with specific contents
 
 
