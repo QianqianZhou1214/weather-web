@@ -18,6 +18,29 @@ public class BigCity extends City {
         this.districts = districts;
     }
 
+    public ArrayList<String> getDistricts() {
+        return this.districts;
+    }
+    public void setDistricts(ArrayList<String> districts) {
+        this.districts = districts;
+    }
+
+    /**
+     * Add districts in case we have more districts in the future
+     * @param newDistrict districts to be added
+     */
+    public void addDistricts(String newDistrict){
+        this.districts.add(newDistrict);
+    }
+
+    /**
+     * Remove districts, in case we have to remove some in the future
+     * @param district districts to be removed
+     */
+    public void removeDistrict(String district){
+        this.districts.remove(district);
+    }
+
     /**
      * Implement the abstract getContent method from super class City
      * @return return the page contents of big city

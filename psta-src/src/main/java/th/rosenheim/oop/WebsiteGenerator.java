@@ -27,6 +27,10 @@ public class WebsiteGenerator {
         this.cities.add(newCity);
     }
 
+    public void removeCities(City city) {
+        this.cities.remove(city);
+    }
+
     /**
      * Generates the Navigation Bar for website
      * @return return navigation bar in string

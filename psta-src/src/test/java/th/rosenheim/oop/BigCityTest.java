@@ -18,6 +18,27 @@ class BigCityTest {
 
     }
 
+    @Test public void getDistrictsTest(){
+        berlin.setDistricts(new ArrayList<>(List.of("Kreuzberg")));
+        assertTrue(berlin.getDistricts().contains("Kreuzberg"));
+    }
+
+    @Test public void setDistrictsTest(){
+        berlin.setDistricts(new ArrayList<>(List.of("Kreuzberg")));
+        assertTrue(berlin.getDistricts().contains("Kreuzberg"));
+    }
+
+    @Test public void addDistrictsTest(){
+        berlin.addDistricts("Mitte");
+        assertTrue(berlin.getDistricts().contains("Mitte"));
+    }
+
+    @Test public void removeDistrictsTest(){
+        berlin.removeDistrict("Mitte");
+        assertFalse(berlin.getDistricts().contains("Mitte"));
+    }
+
+
     @Test public void getContentTest(){
         String expectedContent = "<h2>Weather for Berlin</h2><p>It is sunny in Berlin.</p><p>This also applied to: Kreuzberg, Charlottenburg, Prenzlauer Berg, Friedrichshain, Neukölln, Schöneberg.</p>";
         String content = berlin.getContent();
