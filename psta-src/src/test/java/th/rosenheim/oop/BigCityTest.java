@@ -16,13 +16,10 @@ class BigCityTest {
     @BeforeEach
     public void setUpClass() {
         berlin = new BigCity("Berlin", WeatherCondition.SUNNY.ordinal(),
-                new ArrayList<>(new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg"))));
+                new ArrayList<>(List.of("Kreuzberg", "Charlottenburg", "Prenzlauer Berg", "Friedrichshain", "Neukölln", "Schöneberg")));
 
     }
-    @AfterEach
-    public void tearDown() {
 
-    }
 
     @Test public void getDistrictsTest(){
         berlin.setDistricts(new ArrayList<>(List.of("Kreuzberg")));
@@ -35,8 +32,8 @@ class BigCityTest {
     }
 
     @Test public void addDistrictsTest(){
-        berlin.addDistricts("Mitte");
-        assertTrue(berlin.getDistricts().contains("Mitte"));
+        berlin.addDistricts("Prenzlauer Berg");
+        assertTrue(berlin.getDistricts().contains("Prenzlauer Berg"));
     }
 
     @Test public void removeDistrictsTest(){
