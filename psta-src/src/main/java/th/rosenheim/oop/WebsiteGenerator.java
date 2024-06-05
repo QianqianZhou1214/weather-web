@@ -22,11 +22,14 @@ public class WebsiteGenerator {
      * Add new cities to city list
      * @param newCity the new cities to add
      */
-
     public void addCities(City newCity) {
         this.cities.add(newCity);
     }
 
+    /**
+     * Remove cities from city list
+     * @param city the city to be removed from list
+     */
     public void removeCities(City city) {
         this.cities.remove(city);
     }
@@ -49,11 +52,10 @@ public class WebsiteGenerator {
 
     /**
      * Generates webpages structure with navigation and contents
-     * @param navigation In each page we need a Navigation Bar
+     * @param navigation In each page we need a Navigation bar for all cities
      * @param content    We need the weather contents for each page
      * @return return the page with whole contents (navigation and contents)
      */
-
     public String generatePage(String navigation, String content){
         return "<html>\n<body>" + navigation + "\n" + content + "\n<body>\n<html>";
     }
@@ -63,7 +65,6 @@ public class WebsiteGenerator {
      * @param websiteName the file path (names + type e.g. index.html)
      * @throws IOException check for if an I/O error occurs
      */
-
     public void generateWebsites(String websiteName) throws IOException {
         String folderPath = "websites"; //create a folder for html files
         Files.createDirectories(Paths.get(folderPath));

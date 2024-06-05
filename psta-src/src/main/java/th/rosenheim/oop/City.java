@@ -18,19 +18,19 @@ public abstract class City {
 
     public String getCityName() {
         return cityName;
-    }
+    }//getter
 
     public int getWeatherCondition() {
         return weatherCondition;
-    }
+    }//getter
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
-    }
+    }//setter
 
     public void setWeatherCondition(int weatherCondition) {
         this.weatherCondition = weatherCondition;
-    }
+    }//setter
 
     /**
      * return webpage contents city weather

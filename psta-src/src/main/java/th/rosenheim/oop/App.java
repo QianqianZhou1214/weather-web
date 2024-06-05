@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         init();
 
-        //create the object of WebsiteGenerator, the constructor automatically creates a new ArrayList for cities in the website
+        //create the object of WebsiteGenerator
         WebsiteGenerator website = new WebsiteGenerator();
         //add cities to website
         website.addCities(new SmallCity("Rosenheim", WeatherCondition.CLOUDY.ordinal()));

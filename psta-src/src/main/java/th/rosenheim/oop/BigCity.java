@@ -20,10 +20,11 @@ public class BigCity extends City {
 
     public ArrayList<String> getDistricts() {
         return this.districts;
-    }
+    }//getter
+
     public void setDistricts(ArrayList<String> districts) {
         this.districts = districts;
-    }
+    }//setter
 
     /**
      * Add districts in case we have more districts in the future
