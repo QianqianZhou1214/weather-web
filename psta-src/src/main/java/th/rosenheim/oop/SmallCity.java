@@ -4,8 +4,8 @@ public class SmallCity extends City {
 
     /**
      * Constructs a small city with name and weather condition
-     * @param cityName
-     * @param weatherCondition
+     * @param cityName small city name
+     * @param weatherCondition small city weather condition
      */
     public SmallCity(String cityName, int weatherCondition) {
 
@@ -14,14 +14,13 @@ public class SmallCity extends City {
     }
 
     /**
-     * Implement the abstract getContent method from super class City
+     * Override (redefine) the methods from superclass
      * @return return the page contents for small city
      */
     @Override
     public String getContent() {
 
-        return "<h2>Weather for " + this.cityName + "</h2>"
-                + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + this.cityName + ".</p>";
+        return super.getContent();
 
     }
 
@@ -32,7 +31,7 @@ public class SmallCity extends City {
     @Override
     public String getURL() {
 
-        return "weather_small_city_" + specialName(cityName) + ".html";
+        return "weather_small_city_" + specialName(this.getCityName()) + ".html";
 
     }
 }

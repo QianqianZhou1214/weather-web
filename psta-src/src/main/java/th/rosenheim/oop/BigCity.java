@@ -42,7 +42,7 @@ public class BigCity extends City {
     }
 
     /**
-     * Implement the abstract getContent method from super class City
+     * Redefine method getContent from superclass with big city's specific implementation
      * @return return the page contents of big city
      */
     @Override
@@ -54,9 +54,7 @@ public class BigCity extends City {
                 districtNames.append(", ");
             }
         }
-        return "<h2>Weather for " + this.cityName + "</h2>"
-                + "<p>It is " + WeatherCondition.getWeatherConditionString(this.weatherCondition) + " in " + this.cityName + ".</p>" +
-                 "<p>This also applied to: " + districtNames + ".</p>";
+        return super.getContent() + "<p>This also applied to: " + districtNames + ".</p>";
     }
 
     /**
@@ -65,6 +63,6 @@ public class BigCity extends City {
      */
     @Override
     public String getURL() {
-        return "weather_big_city_" + specialName(cityName) + ".html";
+        return "weather_big_city_" + specialName(this.getCityName()) + ".html";
     }
 }

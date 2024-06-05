@@ -39,7 +39,7 @@ public class WebsiteGenerator {
         StringBuilder navigation = new StringBuilder();
         navigation.append("<h1>The Weather App</h1><p>");
         for (City city : cities) {
-            navigation.append("<a href=").append(city.getURL()).append(">").append(city.cityName).append("</a>");
+            navigation.append("<a href=").append(city.getURL()).append(">").append(city.getCityName()).append("</a>");
             navigation.append(" | ");
         }
         navigation.setLength(navigation.length() - cities.size());
