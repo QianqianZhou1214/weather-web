@@ -40,7 +40,7 @@ public class WebsiteGenerator {
      */
     public String getNavigation(){
         StringBuilder navigation = new StringBuilder();
-        navigation.append("<h1>The Weather App</h1><p>");
+        navigation.append("<h1>The Weather App</h1><meta charset=\"UTF-8\"><p>");
         for (City city : cities) {
             navigation.append("<a href=").append(city.getURL()).append(">").append(city.getCityName()).append("</a>");
             navigation.append(" | ");
